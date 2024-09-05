@@ -1,0 +1,20 @@
+Steps create package
+controller
+service
+repository
+model
+ work - controller - service - repository - database
+
+ service layer - autowired
+ - User interface
+ - impl - All method create
+ - then controller
+ - User Impl implemets mthods when create in userinterface mehods by user objects
+
+.....................................................
+ steps for rest Api
+ user service interface  1- Define methods
+ user service impl 2- implements methods overide
+ controller 3- make rest api
+Note mthods name and id should be same
+ ...............................................

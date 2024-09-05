@@ -1,0 +1,43 @@
+Steps create package
+controller
+service
+repository
+model
+ work - controller - service - repository - database
+
+ service layer - autowired
+ - User interface
+ - impl - All method create
+ - then controller
+ - User Impl implemets mthods when create in userinterface mehods by user objects
+
+.....................................................
+ steps for rest Api
+ user service interface  1- Define methods
+ user service impl 2- implements methods overide
+ controller 3- make rest api
+Note mthods name and id should be same
+ ...............................................
+
+ DTO
+ -make model and put same data in DTO class
+ -refractor in rest api User to UserDto
+ - change in interface service userservice to User to UserDto
+ -Impl has convert dto to jpa and then jpa to dto as a return type user to UserDto
+ -then rest APi
+
+ ..................................
+1- Model Maper Steps
+ -Add modelmapper maven dependency
+ -configure modelmapper class as a spring bean (Main File Java)
+ -inject and use modelmapper spring bean in service class
+
+
+ ...............................................
+ 2- MapStrict Steps
+ -Add MapStruct dependency(peroperties (version), dependency both needed,plugins as well office website project pom.xml we used)
+ -create UserMapper using MapStruct
+ -User UserMapper in UserServiceImpl Class
+
+
+ ..............................................

@@ -1,0 +1,17 @@
+1................Devlopment Steps...........
+1-Create EmployeeDto
+2-Create service layer
+3-create controller layer
+
+
+..................................
+post api-
+{
+    http://localhost:8081/api/employees/create
+    "firstName":"Ankit",
+    "lastName":"Rajvanshi",
+    "email":"ankit@gmail.com"
+}
+....................................
+Postman
+get url - http://localhost:8081/api/employees/5

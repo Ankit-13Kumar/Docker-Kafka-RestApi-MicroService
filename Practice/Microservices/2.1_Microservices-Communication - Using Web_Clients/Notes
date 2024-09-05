@@ -1,0 +1,42 @@
+Assignment: Assignment 1: Use Mapping Libraries in EmployeeService and DepartmentService
+60 minutes to complete
+181 student solutions
+Complete this assignment to get hands-on experience using Mapping libraries in Spring boot applications
+
+..............................
+Assignment: Assignment 2: Exception Handling in EmployeeService and DepartmentService
+60 minutes to complete
+130 student solutions
+Complete this assignment to get hands-on experience handling exceptions in Spring boot applications and return a proper error response back to the client.
+
+...............................
+Requirements-
+1- consider employee belongs to department and employee has a unique department code .
+2- Change get employee RestApi to return employee along with it's department in response.
+
+..........Development Steps......................
+1-Add departmentCode field in Employee JPA entity
+2-Create departmentDTO class
+3-configure RestTemplate as SpringBean
+4-Inject and use RestTemplate to make RestApi call in EmployeeserviceImpl Class
+........................................................
+Run Both
+http://localhost:8081/api/employees/5
+.....................................
+http://localhost:8081/api/employees/create
+{
+    "firstName":"sumanthk",
+    "lastName":"purbey",
+    "email":"ankit023@gmail.com",
+    "departmentCode":"1144"
+}
+
+.....................................................
+
+Devlopment steps-
+1-Add web flux dependency
+2-configure webclient as springbean
+3-Inject and use WebClient to call the RestApi
+4-Test Using Postman client
+
+.............................................

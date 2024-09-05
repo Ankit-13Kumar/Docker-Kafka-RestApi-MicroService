@@ -1,0 +1,14 @@
+1...................
+    http://localhost:8080/api/departments/create
+
+{
+    "departmentName":"Computer Engenering",
+    "departmentDescription":"Coding & Development",
+    "departmentCode":1144
+}
+
+2......................
+department by code not Id
+http://localhost:8080/api/departments/1144
+
+........................

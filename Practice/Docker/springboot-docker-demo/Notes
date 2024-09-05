@@ -1,0 +1,112 @@
+................Docker.............
+1- Create application
+2- Maven Build steps---
+Maven-lifecycle-select cleans & package run
+
+.................docker BUILD............
+
+COMMAND RUN IN CMD
+C:\Users\akumar2490\Downloads\Microservices\Practice\Docker\springboot-docker-demo>
+- docker build -t springboot-docker-demo .
+
+.................CMD OUTPUT...........................
+    C:\Users\akumar2490\Downloads\Microservices\Practice\Docker\springboot-docker-demo>docker build -t springboot-docker-demo .
+    [+] Building 40.2s (8/8) FINISHED
+     => [internal] load .dockerignore                                                                                                                                      0.0s
+     => => transferring context: 2B                                                                                                                                        0.0s
+     => [internal] load build definition from Dockerfile                                                                                                                   0.1s
+     => => transferring dockerfile: 397B                                                                                                                                   0.0s
+     => [internal] load metadata for docker.io/library/eclipse-temurin:17                                                                                                  9.8s
+     => [1/3] FROM docker.io/library/eclipse-temurin:17@sha256:2afd828b3c10d72c0dc2d0c297bb2e6633f9f22609da1202dddd94dd78d4627d                                           29.4s
+     => => resolve docker.io/library/eclipse-temurin:17@sha256:2afd828b3c10d72c0dc2d0c297bb2e6633f9f22609da1202dddd94dd78d4627d                                            0.0s
+     => => sha256:857412f02e8d49bb7e247b45ce86ce6378bd0bc5e8533e1fffa2a6e7a93aab46 17.04MB / 17.04MB                                                                       4.7s
+     => => sha256:aed87efb612a2acced105d3a246a35172653da9116cd473703b951030db5919f 192.59MB / 192.59MB                                                                    20.1s
+     => => sha256:2afd828b3c10d72c0dc2d0c297bb2e6633f9f22609da1202dddd94dd78d4627d 1.70kB / 1.70kB                                                                         0.0s
+     => => sha256:b44dfb46bc455a4996762a65c97a5e1d0f8c71ad5139482003a1b34877518b72 1.16kB / 1.16kB                                                                         0.0s
+     => => sha256:5a1e5bbaef9581f1e054e6b44b9746eb98de59415dfdb7df6dd5d52e3ce93cf2 6.31kB / 6.31kB                                                                         0.0s
+     => => sha256:3f94e4e483ea634d7ab0b63649b8f72f8b721d4c626297fd0edae0abea1df9e9 30.43MB / 30.43MB                                                                      18.6s
+     => => sha256:b61ea314f37d49fc1727efed5300d98a1d9ee7b22e7f010d57397bcba47eb7c0 176B / 176B                                                                             5.1s
+     => => extracting sha256:3f94e4e483ea634d7ab0b63649b8f72f8b721d4c626297fd0edae0abea1df9e9                                                                              3.1s
+     => => extracting sha256:857412f02e8d49bb7e247b45ce86ce6378bd0bc5e8533e1fffa2a6e7a93aab46                                                                              2.6s
+     => => extracting sha256:aed87efb612a2acced105d3a246a35172653da9116cd473703b951030db5919f                                                                              4.2s
+     => => extracting sha256:b61ea314f37d49fc1727efed5300d98a1d9ee7b22e7f010d57397bcba47eb7c0                                                                              0.0s
+     => [internal] load build context                                                                                                                                      0.4s
+     => => transferring context: 18.70MB                                                                                                                                   0.4s
+     => [2/3] WORKDIR /app                                                                                                                                                 0.5s
+     => [3/3] COPY target/springboot-docker-demo-0.0.1-SNAPSHOT.jar /app/springboot-docker-demo.jar                                                                        0.1s
+     => exporting to image                                                                                                                                                 0.2s
+     => => exporting layers                                                                                                                                                0.2s
+     => => writing image sha256:88593dfdd792da083268a4f7e0bdd5854aac2e56f7a97771aa2c68b672eb31a9                                                                           0.0s
+     => => naming to docker.io/library/springboot-docker-demo                                                                                                              0.0s
+
+   ...................................................
+
+   TO CHECK IMAGES TYPE - docker images-
+   C:\Users\akumar2490\Downloads\Microservices\Practice\Docker\springboot-docker-demo>docker images
+   REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+   springboot-docker-demo   latest    88593dfdd792   3 minutes ago   475MB
+   rabbitmq                 3.11.0    bf56ebb3b006   8 months ago    229MB
+
+
+   .................................................................
+   To build with change Tag
+   type in cmd - docker build -t springboot-docker-demo:0.1.RELEASE .
+
+   REPOSITORY               TAG           IMAGE ID       CREATED         SIZE
+   springboot-docker-demo   0.1.RELEASE   88593dfdd792   7 minutes ago   475MB
+   springboot-docker-demo   latest        88593dfdd792   7 minutes ago   475MB
+   rabbitmq                 3.11.0        bf56ebb3b006   8 months ago    229MB
+
+   ...............................To run docker application on port.................................................
+To run docker application on port-
+   Run in cmd - docker run -p 8080:8080 springboot-docker-demo
+   To check- http://localhost:8080/docker
+
+   .........................
+   To check running container type - docker ps
+   C:\Users\akumar2490\Downloads\Microservices\Practice\Docker\springboot-docker-demo>docker ps
+   CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+   .......................................................
+   To change port - docker run -p 8081:8080 springboot-docker-demo
+
+   ............................................................
+   To run in detached mode - docker run -p 8081:8080 -d springboot-docker-demo
+   in log format outcome
+   cmd- docker run -p 8081:8080 -d springboot-docker-demo
+   a1689a6e7e938d48e57d19d22f42686fb4f57ddf132ee774d51bfcb163979a2b
+   Note- first 4 alphabet of logs put here to see terminal
+   cmd - docker logs -f a168
+   ............................................................
+   ...........Application running in background ..........
+   Logs are running in background so for stop run - docker stop a168
+   ...BEFORE
+  Cmd- docker ps
+  CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                    NAMES
+  a1689a6e7e93   springboot-docker-demo   "java -jar springboo…"   9 minutes ago   Up 9 minutes   0.0.0.0:8081->8080/tcp   reverent_lalande
+
+  Cmd- docker stop a168
+  a168
+  ...AFTER
+  Cmd- docker ps
+  CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+....................................................................................
+
+........................PUSH.................
+
+1-LOGIN IN CMD - docker login
+2-cmd- docker tag springboot-docker-demo ankit01234/springboot-docker-demo:0.1.RELEASE
+...After Push...
+3-To check typr - docker images
+4- Local to Docker cmd- docker push ankit01234/springboot-docker-demo:0.1.RELEASE
+docker push ankit01234/springboot-docker-demo:tagname
+Success u can check on docker login on chrome
+
+........................................................
+..............................PULL FROM DOCKER..........................
+CMD - docker pull ankit01234/springboot-docker-demo:0.1.RELEASE
+- docker pull ankit01234/springboot-docker-demo:tagname
+
+.......................................................................
+
+docker pull mysql - It will take latest tag
+docker images
